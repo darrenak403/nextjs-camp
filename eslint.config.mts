@@ -6,19 +6,21 @@ import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   { files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], plugins: { js }, extends: ["js/recommended"], languageOptions: { globals: globals.browser } },
-  tseslint.configs.recommended,
+  {
+    ...tseslint.configs.recommended,
+    languageOptions: {
+      tsconfigRootDir: process.cwd(),
+    },
+  },
   pluginReact.configs.flat.recommended,
   {
-    plugins: { js },
-    extends: ["js/recommended"],
-    languageOptions: { globals: globals.browser },
     rules: {
       "react/display-name": "off",
       indent: ["error", 4],
       "react-hooks/exhaustive-deps": "off",
       "linebreak-style": "off",
       quotes: ["error", "double"],
-      semi: ["error", "never"],
+      semi: ["error", "always"],
     },
   },
 ]);

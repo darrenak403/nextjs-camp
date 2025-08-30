@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <Calendar />
-      <InputOtp />
+      <InputOtp value="" onChange={() => {}} />
       <MyButton>Data</MyButton>
     </div>
   );
