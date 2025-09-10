@@ -4,6 +4,7 @@ import {useFormik} from "formik";
 import * as Yup from "yup";
 import {Eye} from "phosphor-react";
 import React, {useState} from "react";
+import App from "./Modal";
 
 export const FormExample = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -78,6 +79,7 @@ export const FormExample = () => {
       >
         Submit
       </Button>
+      <App />
     </div>
   );
 };
