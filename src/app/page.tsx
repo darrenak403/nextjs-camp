@@ -2,6 +2,7 @@
 
 import {Button, Input, Spacer} from "@heroui/react";
 import Children2 from "./Children2";
+import {FormExample} from "./FormExample";
 // import {useState} from "react";
 // import {MyButton} from "@/components/styled/MyButton";
 // import {setCarrot, useAppDispatch, useAppSelector} from "@/redux";
@@ -132,7 +133,7 @@ import Children2 from "./Children2";
 export default function Home() {
   return (
     <div>
-      <Children2 />
+      <FormExample />
     </div>
   );
 }
