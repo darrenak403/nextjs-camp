@@ -5,6 +5,7 @@ import Children2 from "./Children2";
 import {FormExample} from "./FormExample";
 import LoginModal from "./LoginModal";
 import SignUpModal from "./SignUpModal";
+import {AppButton, AppCard, AppCardBody} from "@/components";
 // import {useState} from "react";
 // import {MyButton} from "@/components/styled/MyButton";
 // import {setCarrot, useAppDispatch, useAppSelector} from "@/redux";
@@ -135,7 +136,12 @@ import SignUpModal from "./SignUpModal";
 export default function Home() {
   return (
     <div>
-      <FormExample />
+      {/* <FormExample /> */}
+      <AppButton kind="rainbow">Click me</AppButton>
+
+      <AppCard flag={false}>
+        <AppCardBody>1231231</AppCardBody>
+      </AppCard>
       <div>
         <LoginModal /> {/* Modal phải được render ở đây */}
         <SignUpModal /> {/* Modal phải được render ở đây */}
