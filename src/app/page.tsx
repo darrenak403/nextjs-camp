@@ -10,7 +10,10 @@ import {ButtonGroup} from "@/components";
 import {ToolTipTile} from "@/components";
 import {MyNavbar} from "@/components/shared/Navbar/Navbar";
 import {getCurrentDate} from "@/modules";
-import {useFetchPikachuSwrSingleton} from "@/hook";
+import {
+  useFetchAegislashSwrSingleton,
+  useFetchPikachuSwrSingleton,
+} from "@/hook";
 
 // import {useState} from "react";
 // import {MyButton} from "@/components/styled/MyButton";
@@ -141,8 +144,10 @@ import {useFetchPikachuSwrSingleton} from "@/hook";
 
 export default function Home() {
   const {data, mutate, isLoading} = useFetchPikachuSwrSingleton();
+  const {data: dataAegislash} = useFetchAegislashSwrSingleton();
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900 dark:bg-gray-900  dark:text-gray-100">
+      {JSON.stringify(dataAegislash)}
       <MyNavbar />
       {getCurrentDate()}
       <FormExample />
