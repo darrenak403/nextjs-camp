@@ -4,7 +4,7 @@ import React from "react";
 import {Info} from "phosphor-react";
 import {cva} from "class-variance-authority";
 
-interface ToolTipTileProps {
+export interface ToolTipTileProps {
   title: React.ReactNode;
   tooltip: string;
   size?: "sm" | "md" | "lg";

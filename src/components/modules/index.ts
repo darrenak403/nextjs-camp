@@ -1,2 +1,2 @@
 export * from "./ButtonGroup/ButtonGroup";
-export * from "./ToolTipTile/index";
+export * from "./ToolTipTitle/ToolTipTitle";
