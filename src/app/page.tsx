@@ -8,6 +8,8 @@ import SignUpModal from "./SignUpModal";
 import {AppButton, AppCard, AppCardBody} from "@/components";
 import {ButtonGroup} from "@/components";
 import {ToolTipTile} from "@/components";
+import {MyNavbar} from "@/components/shared/Navbar/Navbar";
+
 // import {useState} from "react";
 // import {MyButton} from "@/components/styled/MyButton";
 // import {setCarrot, useAppDispatch, useAppSelector} from "@/redux";
@@ -138,6 +140,7 @@ import {ToolTipTile} from "@/components";
 export default function Home() {
   return (
     <div>
+      <MyNavbar />
       {/* <FormExample /> */}
       <AppButton kind="rainbow">Click me</AppButton>
 
@@ -152,6 +155,10 @@ export default function Home() {
         title="Example Title"
         tooltip="This is a tooltip"
       />
+
+      <br />
+
+      <ToolTipTile size="lg" title="Another Title" tooltip="Another tooltip" />
 
       <AppCard flag={false}>
         <AppCardBody>1231231</AppCardBody>

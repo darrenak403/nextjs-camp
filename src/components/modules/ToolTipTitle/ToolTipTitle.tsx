@@ -5,7 +5,7 @@ import {Info} from "phosphor-react";
 import {cva} from "class-variance-authority";
 
 export interface ToolTipTileProps {
-  title: React.ReactNode;
+  title: string;
   tooltip: string;
   size?: "sm" | "md" | "lg";
 }
@@ -51,5 +51,3 @@ export const ToolTipTile = ({
     </div>
   );
 };
-
-export default ToolTipTile;
