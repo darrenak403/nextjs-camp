@@ -6,6 +6,8 @@ import {FormExample} from "./FormExample";
 import LoginModal from "./LoginModal";
 import SignUpModal from "./SignUpModal";
 import {AppButton, AppCard, AppCardBody} from "@/components";
+import {ButtonGroup} from "@/components";
+import {ToolTipTile} from "@/components";
 // import {useState} from "react";
 // import {MyButton} from "@/components/styled/MyButton";
 // import {setCarrot, useAppDispatch, useAppSelector} from "@/redux";
@@ -138,6 +140,18 @@ export default function Home() {
     <div>
       {/* <FormExample /> */}
       <AppButton kind="rainbow">Click me</AppButton>
+
+      <hr />
+
+      <ButtonGroup numButtons={5} />
+
+      <br />
+
+      <ToolTipTile
+        size="md"
+        title="Example Title"
+        tooltip="This is a tooltip"
+      />
 
       <AppCard flag={false}>
         <AppCardBody>1231231</AppCardBody>
