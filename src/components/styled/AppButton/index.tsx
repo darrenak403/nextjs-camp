@@ -1,6 +1,7 @@
 "use client";
+import React from "react";
 import {Button, ButtonProps} from "@heroui/react";
 
-export function MyButton(props: ButtonProps) {
+export function AppButton(props: ButtonProps) {
   return <Button className="font-bold" {...props} />;
 }
