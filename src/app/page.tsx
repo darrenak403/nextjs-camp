@@ -139,7 +139,7 @@ import {MyNavbar} from "@/components/shared/Navbar/Navbar";
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen bg-gray-100 text-gray-900 dark:bg-gray-900  dark:text-gray-100">
       <MyNavbar />
       {/* <FormExample /> */}
       <AppButton kind="rainbow">Click me</AppButton>

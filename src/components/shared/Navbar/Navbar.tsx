@@ -6,6 +6,8 @@ import {
   Link,
   Button,
 } from "@heroui/react";
+import {SwitchTheme} from "./SwitchTheme";
+import {AppButton} from "@/components/styled";
 
 export const AcmeLogo = () => {
   return (
@@ -49,9 +51,9 @@ export function MyNavbar() {
           <Link href="#">Login</Link>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
+          <AppButton as={Link} color="primary" href="#" variant="flat">
             Sign Up
-          </Button>
+          </AppButton>
         </NavbarItem>
         <SwitchTheme />
       </NavbarContent>
