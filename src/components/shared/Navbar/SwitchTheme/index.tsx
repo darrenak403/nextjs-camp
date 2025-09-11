@@ -1,5 +1,5 @@
 import {Switch} from "@heroui/react";
-
+import {useTheme} from "next-themes";
 import React from "react";
 import {MoonIcon, SunIcon} from "@phosphor-icons/react";
 
