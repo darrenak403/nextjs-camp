@@ -9,6 +9,8 @@ import {AppButton, AppCard, AppCardBody} from "@/components";
 import {ButtonGroup} from "@/components";
 import {ToolTipTile} from "@/components";
 import {MyNavbar} from "@/components/shared/Navbar/Navbar";
+import {getCurrentDate} from "@/modules";
+import {useFetchPikachuSwrSingleton} from "@/hook";
 
 // import {useState} from "react";
 // import {MyButton} from "@/components/styled/MyButton";
@@ -138,10 +140,12 @@ import {MyNavbar} from "@/components/shared/Navbar/Navbar";
 //Context => chia nho code ra de code cho suong, quang tat ca cac code vao 1 file.
 
 export default function Home() {
+  const {data, mutate, isLoading} = useFetchPikachuSwrSingleton();
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900 dark:bg-gray-900  dark:text-gray-100">
       <MyNavbar />
-      {/* <FormExample /> */}
+      {getCurrentDate()}
+      <FormExample />
       <AppButton kind="rainbow">Click me</AppButton>
 
       <hr />
@@ -164,9 +168,11 @@ export default function Home() {
         <AppCardBody>1231231</AppCardBody>
       </AppCard>
       <div>
-        <LoginModal /> {/* Modal phải được render ở đây */}
-        <SignUpModal /> {/* Modal phải được render ở đây */}
+        <LoginModal />
+        <SignUpModal />
       </div>
+      <Button onPress={() => mutate()}>Update Data (no revalidate)</Button>
+      {isLoading ? <p>Loading...</p> : JSON.stringify(data)}
     </div>
   );
 }
