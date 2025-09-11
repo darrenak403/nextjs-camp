@@ -163,7 +163,7 @@ export default function App() {
         loadingState={loadingState}
       >
         {(item) => (
-          <TableRow key={item?.name}>
+          <TableRow>
             {(columnKey) => (
               <TableCell>{getKeyValue(item, columnKey)}</TableCell>
             )}

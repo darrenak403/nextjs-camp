@@ -4,7 +4,10 @@ import {useFormik} from "formik";
 import * as Yup from "yup";
 import {Eye} from "phosphor-react";
 import React, {useState} from "react";
-import App from "./Modal";
+import {
+  // useLoginDiscloresureSingleton,
+  useSignUpDiscloresureSingleton,
+} from "@/hook";
 
 export const FormExample = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -35,8 +38,14 @@ export const FormExample = () => {
     },
   });
 
+  // const {onOpen} = useLoginDiscloresureSingleton();
+  const {onOpen} = useSignUpDiscloresureSingleton();
+
   return (
     <div className="flex flex-col gap-4">
+      <Button onPress={() => onOpen()}>Open Login Modal</Button>
+      {/* <Button onPress={onOpen}>Open Sign Up Modal</Button> */}
+      <div className="text-2xl font-bold">Sign Up Form</div>
       <Input
         label="Username"
         value={formik.values.username}
@@ -79,7 +88,6 @@ export const FormExample = () => {
       >
         Submit
       </Button>
-      <App />
     </div>
   );
 };

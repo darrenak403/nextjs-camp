@@ -3,6 +3,8 @@
 import {Button, Input, Spacer} from "@heroui/react";
 import Children2 from "./Children2";
 import {FormExample} from "./FormExample";
+import LoginModal from "./LoginModal";
+import SignUpModal from "./SignUpModal";
 // import {useState} from "react";
 // import {MyButton} from "@/components/styled/MyButton";
 // import {setCarrot, useAppDispatch, useAppSelector} from "@/redux";
@@ -134,6 +136,10 @@ export default function Home() {
   return (
     <div>
       <FormExample />
+      <div>
+        <LoginModal /> {/* Modal phải được render ở đây */}
+        <SignUpModal /> {/* Modal phải được render ở đây */}
+      </div>
     </div>
   );
 }
