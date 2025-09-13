@@ -78,6 +78,7 @@ import {
 } from "@heroui/react";
 import useSWR from "swr";
 import axios from "axios";
+import {fetcher} from "@/lib/fetcher";
 
 export default function App() {
   const [page, setPage] = React.useState(1);
@@ -104,15 +105,33 @@ export default function App() {
   //     }
   //   );
 
-  const {data, isLoading} = useSWR(
+  //*** KHÔNG DÙNG LIB *** */
+  // const {data, isLoading} = useSWR(
+  //   //key
+  //   ["PAGINATION", page],
+  //   //fetcher function
+  //   async ([_, page]) => {
+  //     const res = await axios.get(
+  //       `https://swapi.py4e.com/api/people?page=${page}`
+  //     );
+  //     return res.data;
+  //   },
+  //   //config
+  //   {
+  //     keepPreviousData: true,
+  //     revalidateIfStale: true,
+  //     revalidateOnMount: true,
+  //     revalidateOnReconnect: true,
+  //   }
+  // );
+
+  const { data, isLoading } = useSWR(
     //key
     ["PAGINATION", page],
     //fetcher function
-    async ([, page]) => {
-      const res = await axios.get(
-        `https://swapi.py4e.com/api/people?page=${page}`
-      );
-      return res.data;
+    async ([_, page]: [string, number]) => {
+      const url = `https://swapi.py4e.com/api/people?page=${page}`;
+      return fetcher(url);
     },
     //config
     {
