@@ -79,6 +79,7 @@ import {
 import useSWR from "swr";
 import axios from "axios";
 import {fetcher} from "@/lib/fetcher";
+import {useFetchPikachuSwrSingleton} from "@/hook";
 
 export default function App() {
   const [page, setPage] = React.useState(1);
@@ -125,7 +126,15 @@ export default function App() {
   //   }
   // );
 
-  const { data, isLoading } = useSWR(
+  // Sử dụng Pikachu hook
+  const {
+    data: pikachuData,
+    isLoading: pikachuLoading,
+    mutate: mutatePikachu,
+  } = useFetchPikachuSwrSingleton();
+
+  //*** DÙNG LIB *** */
+  const {data, isLoading} = useSWR(
     //key
     ["PAGINATION", page],
     //fetcher function
